@@ -1,38 +1,56 @@
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
+  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo"/></a>
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+# Dólar Argentina Scraper
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+Este proyecto es una práctica de la herramienta Puppeteer y un apoyo a mi emprendimiento personal. La idea detrás de este proyecto es hacer web scraping a una página de información financiera para obtener el valor del dólar en Argentina. 
 
-## Description
+Dicha página es la de https://www.finanzasargy.com/
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Por lo que los valores de dolar obtenidos son:
 
-## Installation
+- Dólar Blue
+- Dólar Oficial
+- Dólar Tarjeta
+- Dólar Cripto
+- Dólar MEP
+- Dólar CCL
+- Dólar Mayorista
+
+## Descripción del Proyecto
+
+Usé Puppeteer para obtener los datos necesarios y NestJS para construir el backend. El propósito es tener un backend desplegado que pueda proporcionar los valores del dólar en un archivo Excel, actualizándose cada vez que se abra. Esto es crucial para mi emprendimiento, ya que necesito conocer el precio del dólar para fijar los precios de mis productos y mantener una planilla de precios actualizada.
+
+Gracias a este proyecto, tengo una planilla con los precios actualizados del dólar blue en todo momento.
+
+## Tecnologías Utilizadas
+
+- **Puppeteer**: Herramienta de Node.js para automatización del navegador y web scraping.
+- **NestJS**: Framework para construir aplicaciones backend eficientes y escalables.
+
+## Configuración del Proyecto
+
+### Requisitos
+
+- Node.js (versión 18 o superior)
+
+### Instalación
+
+1. Clona el repositorio:
+
+```bash
+$ git clone https://github.com/Metaldev-06/api-dolar-puppeteer.git
+```
+
+
+### Instalar dependencias
 
 ```bash
 $ yarn install
 ```
 
-## Running the app
+### Correr la aplicación
 
 ```bash
 # development
@@ -45,29 +63,16 @@ $ yarn run start:dev
 $ yarn run start:prod
 ```
 
-## Test
+La aplicación estará disponible en http://localhost:3000.
 
-```bash
-# unit tests
-$ yarn run test
+## Endpoints
+- **GET** /dolar: Devuelve todos los tipos de cambio del dólar.
+- **GET** /dolar/:name: Devuelve los detalles de un tipo específico de dólar.
+- **GET** /dolar/:name/value: Devuelve solo el valor de venta de un tipo específico de dólar.
 
-# e2e tests
-$ yarn run test:e2e
 
-# test coverage
-$ yarn run test:cov
-```
+## Contribuciones
+Las contribuciones son bienvenidas. Por favor, abre un issue o envía un pull request para cualquier mejora o corrección.
 
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+## Licencia
+Este proyecto está licenciado bajo la Licencia MIT.
